@@ -7,22 +7,17 @@
   --card: #10182a;
   --text: #eef2ff;
   --muted: #a7b0c6;
-  --accent: #7c3aed;        /* canlı mor */
-  --accent-2: #22d3ee;      /* aqua vurgusu */
+  --accent: #7c3aed;
+  --accent-2: #22d3ee;
   --border: #1f2a44;
-
-  /* Decorative */
   --shadow: 0 10px 24px rgba(0,0,0,.25);
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
-
-  /* Motion */
   --fast: 160ms;
   --easing: cubic-bezier(.2,.7,.2,1);
 }
 
-/* Light mode */
 :root.light {
   --bg: #f7f9fd;
   --card: #ffffff;
@@ -47,10 +42,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Containers */
 .container { width: min(1120px, 92%); margin-inline: auto; }
 
-/* Skip link */
 .skip-link {
   position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
 }
@@ -65,7 +58,6 @@ body {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  /* yumuşak degrade arkaplan */
   background:
     linear-gradient(90deg, color-mix(in oklab, var(--accent) 22%, transparent),
                           color-mix(in oklab, var(--accent-2) 18%, transparent)) ,
@@ -79,7 +71,6 @@ body {
   padding: .8rem 0;
 }
 
-/* Logo / Profile image in header */
 .logo {
   display: block;
   width: 64px; height: 64px;
@@ -94,7 +85,6 @@ body {
 .title { margin: 0; font-size: clamp(1.25rem, 4vw, 1.8rem); font-weight: 800; }
 .subtitle { margin: .15rem 0 0; color: var(--muted); font-size: .98rem; }
 
-/* Nav */
 .nav { display: flex; align-items: center; gap: .75rem; }
 .nav a {
   --bg-btn: color-mix(in oklab, var(--card) 86%, transparent);
@@ -118,7 +108,6 @@ body {
 }
 .theme-toggle:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
 
-/* ===== Cards ===== */
 .card {
   background:
     radial-gradient(1200px 300px at 0% -10%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 60%),
@@ -137,14 +126,12 @@ h1, h2, h3 { line-height: 1.25; }
 h2 { font-size: clamp(1.25rem, 3vw, 1.55rem); margin-top: 0; }
 h3 { font-size: clamp(1.08rem, 2.5vw, 1.2rem); margin: .25rem 0 .45rem; }
 
-/* Timeline */
 .timeline { list-style: none; padding: 0; margin: 0; }
 .timeline li { padding: .55rem 0; border-bottom: 1px dashed var(--border); }
 .timeline li:last-child { border-bottom: none; }
 .tl-head { display: flex; justify-content: space-between; gap: 1rem; }
 .tl-meta { color: var(--muted); font-size: .95rem; }
 
-/* Jobs */
 .job { margin-bottom: 1rem; }
 .job-head {
   display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
@@ -154,7 +141,6 @@ h3 { font-size: clamp(1.08rem, 2.5vw, 1.2rem); margin: .25rem 0 .45rem; }
 .bullets { padding-left: 1.25rem; margin: .25rem 0 .6rem; }
 .bullets li { margin: .28rem 0; }
 
-/* Skills grid + colorful tags */
 .skills {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: .6rem; list-style: none; padding: 0; margin: .35rem 0 1.1rem;
@@ -181,32 +167,27 @@ h3 { font-size: clamp(1.08rem, 2.5vw, 1.2rem); margin: .25rem 0 .45rem; }
   box-shadow: var(--shadow);
 }
 
-/* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem; padding: 1rem 0 3rem;
   text-align: center; color: var(--muted);
 }
 
-/* Focus styles (erişilebilirlik) */
 a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
   outline: 2px solid var(--accent-2);
   outline-offset: 2px;
   border-radius: .5rem;
 }
 
-/* Subtle link style in content */
 .card a { color: color-mix(in oklab, var(--accent-2) 75%, #fff); text-decoration: underline; }
 .card a:hover { text-decoration-thickness: 3px; }
 
-/* ===== Responsive ===== */
 @media (max-width: 840px) {
   .header-inner { grid-template-columns: auto 1fr; }
   .nav { grid-column: 1 / -1; flex-wrap: wrap; gap: .5rem; margin-top: .35rem; }
   .logo { width: 56px; height: 56px; }
 }
 
-/* ===== Optional: Larger photo in About (add class .profile-hero to img if needed) ===== */
 .profile-hero {
   width: 120px; height: 120px; object-fit: cover;
   border-radius: 50%; border: 3px solid color-mix(in oklab, var(--accent) 40%, var(--border));
